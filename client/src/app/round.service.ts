@@ -12,7 +12,7 @@ export class RoundService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private refreshEmployees() {
+  private refreshRounds() {
     this.httpClient.get<Round[]>(`${this.url}/rounds`)
       .subscribe(rounds => {
         this.rounds$.next(rounds);
@@ -20,7 +20,7 @@ export class RoundService {
   }
 
   getRounds(): Subject<Round[]> {
-    this.refreshEmployees();
+    this.refreshRounds();
     return this.rounds$;
   }
 
@@ -36,7 +36,7 @@ export class RoundService {
     return this.httpClient.put(`${this.url}/rounds/${id}`, round, { responseType: 'text' });
   }
 
-  deleteEmployee(id: string): Observable<string> {
+  deleteRound(id: string): Observable<string> {
     return this.httpClient.delete(`${this.url}/rounds/${id}`, { responseType: 'text' });
   }
 }
