@@ -36,19 +36,19 @@ import { RoundService } from '../round.service';
       </thead>
 
       <tbody>
-          <tr *ngFor="let employee of employees$ | async">
-              <td>{{employee.name}}</td>
-              <td>{{employee.position}}</td>
-              <td>{{employee.level}}</td>
+          <tr *ngFor="let round of rounds$ | async">
+              <td>{{round.name}}</td>
+              <td>{{round.position}}</td>
+              <td>{{round.level}}</td>
               <td>
-                  <button class="btn btn-primary me-1" [routerLink]="['edit/', employee._id]">Edit</button>
-                  <button class="btn btn-danger" (click)="deleteEmployee(employee._id || '')">Delete</button>
+                  <button class="btn btn-primary me-1" [routerLink]="['edit/', round._id]">Edit</button>
+                  <button class="btn btn-danger" (click)="deleteRound(round._id || '')">Delete</button>
               </td>
           </tr>
       </tbody>
   </table>
 
-  <button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Employee</button>
+  <button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Round</button>
   `,
   styles: [
   ]
