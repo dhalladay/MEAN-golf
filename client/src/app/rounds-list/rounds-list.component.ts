@@ -54,10 +54,22 @@ import { RoundService } from '../round.service';
   ]
 })
 export class RoundsListComponent implements OnInit {
+  rounds$: Observable<Round[]> = new Observable();
 
-  constructor() { }
+  constructor(private roundsService: RoundService) {}
 
   ngOnInit(): void {
-  }
+    this.fetchRounds();
+}
+
+deleteRound(id: string): void {
+  this.roundsService.deleteRound(id).subscribe({
+    next: () => this.fetchRounds()
+  });
+}
+
+private fetchRounds(): void {
+  this.rounds$ = this.roundsService.getRounds();
+}
 
 }
