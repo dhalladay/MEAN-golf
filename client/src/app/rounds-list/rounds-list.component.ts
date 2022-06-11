@@ -37,9 +37,9 @@ import { RoundService } from '../round.service';
 
       <tbody>
           <tr *ngFor="let round of rounds$ | async">
-              <td>{{round.name}}</td>
-              <td>{{round.position}}</td>
-              <td>{{round.level}}</td>
+              <td>{{round.course}}</td>
+              <td>{{round.numberHoles}}</td>
+              <td>{{round.nine}}</td>
               <td>
                   <button class="btn btn-primary me-1" [routerLink]="['edit/', round._id]">Edit</button>
                   <button class="btn btn-danger" (click)="deleteRound(round._id || '')">Delete</button>
