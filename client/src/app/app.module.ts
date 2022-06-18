@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoundsListComponent } from './rounds-list/rounds-list.component';
 import { RoundFormComponent } from './round-form/round-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddRoundComponent } from './add-round/add-round.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoundsListComponent,
-    RoundFormComponent
+    RoundFormComponent,
+    AddRoundComponent
   ],
   imports: [
     BrowserModule,
